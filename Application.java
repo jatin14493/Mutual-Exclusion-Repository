@@ -21,7 +21,7 @@ public class Application {
         rulesOld.add(ruleOld2);
         rulesOld.add(ruleOld3);
 
-        Rule ruleOld11 = new Rule("1", "Amount", "GT 200 && LTE 1000");
+        Rule ruleOld11 = new Rule("1", "Amount", "GT 200 && LT 1000");
         Rule ruleOld12 = new Rule("2", "Customer", "CONTAINS 3,4");
         Rule ruleOld13 = new Rule("3", "Department", "CONTAINS 2");
         List<Rule> rulesOld1 = new ArrayList<>();
@@ -29,12 +29,21 @@ public class Application {
         rulesOld1.add(ruleOld12);
         rulesOld1.add(ruleOld13);
 
+        Rule ruleOld112 = new Rule("1", "Amount", "GT 1000 && LT 1500");
+        Rule ruleOld122 = new Rule("2", "Customer", "CONTAINS 3,4");
+        Rule ruleOld132 = new Rule("3", "Department", "CONTAINS 1");
+        List<Rule> rulesOld12 = new ArrayList<>();
+        rulesOld12.add(ruleOld112);
+        rulesOld12.add(ruleOld122);
+        rulesOld12.add(ruleOld132);
+
         oldRules.add(rulesOld);
         oldRules.add(rulesOld1);
+        oldRules.add(rulesOld12);
 
         Rule ruleNew1 = new Rule("1", "Amount", "GT 1000");
-        Rule ruleNew2 = new Rule("2", "Customer", "NOT_CONTAINS 1,2,3,4");
-        Rule ruleNew3 = new Rule("3", "Department", "CONTAINS 3,4");
+        Rule ruleNew2 = new Rule("2", "Customer", "NOT_CONTAINS 3");
+        Rule ruleNew3 = new Rule("3", "Department", "CONTAINS 1,4");
         List<Rule> rulesNew = new ArrayList<>();
         rulesNew.add(ruleNew1);
         rulesNew.add(ruleNew2);
@@ -44,6 +53,7 @@ public class Application {
             try {
                 return ruleEvaluator.process(t, rulesNew);
             } catch (Exception e) {
+                e.printStackTrace();
             }
             return "Invalid Rules";
         }).collect(Collectors.toSet());

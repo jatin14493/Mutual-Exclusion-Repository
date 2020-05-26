@@ -31,9 +31,9 @@ public class RuleEvaluator {
                 resultString = stringTypeEvaluator.process(paramConditionsOld.get(Boolean.TRUE), paramConditionsNew.get(Boolean.TRUE));
         }
 
-        boolean areStringRulesUnique = resultString.values().stream().allMatch(rules -> rules.equals(com.me.rules.NOT_MATCHED));
-        boolean areNonStringRulesUnique = resultNonString.values().stream().allMatch(rules -> rules.equals(com.me.rules.NOT_MATCHED));
-        return areStringRulesUnique && areNonStringRulesUnique ? "UNIQUE" : "NON_UNIQUE";
+        boolean areStringRulesUnique = resultString.values().stream().anyMatch(rules -> rules.equals(com.me.rules.NOT_MATCHED));
+        boolean areNonStringRulesUnique = resultNonString.values().stream().anyMatch(rules -> rules.equals(com.me.rules.NOT_MATCHED));
+        return areStringRulesUnique || areNonStringRulesUnique ? "UNIQUE" : "NON_UNIQUE";
     }
 
 }
