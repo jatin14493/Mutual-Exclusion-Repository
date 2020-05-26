@@ -17,7 +17,7 @@ public class NumberTypeEvaluator implements Evaluator {
     public Map<String, rules> process(Map<String, String> paramConditionOldMap, Map<String, String> paramConditionNewMap) {
         Map<String, rules> result = new HashMap<>();
         for (String param : paramConditionNewMap.keySet()) {
-            String[] existingRule = new String[]{paramConditionOldMap.get(param)};
+            String[] existingRule = (null == paramConditionOldMap.getOrDefault(param, null)) ? null : new String[]{paramConditionOldMap.get(param)};
             result.put(param, isIntegerRuleEvaluation(existingRule, paramConditionNewMap.get(param)));
         }
         return result;
@@ -136,7 +136,6 @@ public class NumberTypeEvaluator implements Evaluator {
     }
 
     private rules checkValidRule(String newRule) {
-        System.out.println("Inside CheckValidRule");
         List<Pair> pairs = prpeareRuleList(newRule);
         Pair finalRange = findIntersection(pairs);
         if (null != finalRange) {

@@ -13,11 +13,11 @@ public class Application {
         RuleEvaluator ruleEvaluator = new RuleEvaluator();
         List<List<Rule>> oldRules = new ArrayList<>();
 
-        Rule ruleOld1 = new Rule("1", "Amount", "GT 100 && LTE 200");
+        //Rule ruleOld1 = new Rule("1", "Amount", "GT 100 && LTE 200");
         Rule ruleOld2 = new Rule("2", "Customer", "CONTAINS 1,2");
         Rule ruleOld3 = new Rule("3", "Department", "CONTAINS 1");
         List<Rule> rulesOld = new ArrayList<>();
-        rulesOld.add(ruleOld1);
+        //rulesOld.add(ruleOld1);
         rulesOld.add(ruleOld2);
         rulesOld.add(ruleOld3);
 
