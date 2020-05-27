@@ -61,52 +61,6 @@ public class NumberTypeEvaluator implements Evaluator {
         operatorMap.put("EQ", "==");
     }
 
-    /***
-     * Enum Usage
-     *
-     * MATCHED : Rule Matches, Hence can't be created.
-     * NOT_MATCHED : Rule is unique
-     * INVALID : Rule Created is Invalid
-     * VALID : Rule Created is Valid
-     */
-
-
-    /*public static void main(String[] args) {
-        // write your code here
-        String[] existingRules = new String[]{"GT 0 && LT 100"};
-        String newRule = "GT 500 && LT 1000";
-        // Valid, in case of first time rule creation
-        System.out.println("1." + isIntegerRuleEvaluation(null, newRule));
-
-        // Should unmatch
-        System.out.println("2." + isIntegerRuleEvaluation(existingRules, newRule));
-
-        // Should match
-        existingRules = new String[]{"GT 0 && GT 2000 && LTE 10000 && GTE 500 && LT 10000"};
-        newRule = "GTE 2000 && LT 5000";
-        System.out.println("3." + isIntegerRuleEvaluation(existingRules, newRule));
-
-        // Should unmatch
-        existingRules = new String[]{"GT 0 && LT 10000 && GT 2000 && LTE 10000 && GTE 500 && LTE 10000"};
-        newRule = "GTE 1000 && LT 1200";
-        System.out.println("4." + isIntegerRuleEvaluation(existingRules, newRule));
-
-        //Valid, in case of first time rule creation
-        newRule = "GTE 1000 && EQ 1200";
-        System.out.println("5." + isIntegerRuleEvaluation(null, newRule));
-
-        //Valid, in case of first time rule creation
-        newRule = "GT 1000 && EQ 1200";
-        System.out.println("6." + isIntegerRuleEvaluation(null, newRule));
-
-        //Invalid, in case of first time rule creation
-        newRule = "LT 1000 && EQ 1200";
-        System.out.println("7." + isIntegerRuleEvaluation(null, newRule));
-
-        //Invalid, in case of first time rule creation
-        newRule = "GT 2000 && EQ 1200";
-        System.out.println("8." + isIntegerRuleEvaluation(null, newRule));
-    }*/
     private rules isIntegerRuleEvaluation(String[] existingRules, String newRule) {
         if (null == existingRules) {
             return checkValidRule(newRule);

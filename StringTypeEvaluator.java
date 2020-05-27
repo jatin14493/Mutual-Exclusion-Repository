@@ -28,66 +28,7 @@ public class StringTypeEvaluator implements Evaluator {
      * INVALID : Rule Created is Invalid
      * VALID : Rule Created is Valid
      */
-
-
-
-    /*public static void main(String[] args) {
-        // write your code here
-        String[] existingRules = new String[]{"CONTAINS 1,2,3"};
-        String newRule = "CONTAINS 1,2";
-        // Matched [If not present, that means for any customer which is anyMatch() use case]
-        System.out.println("1." + isStringRuleEvaluation(null, newRule));
-        assert isStringRuleEvaluation(existingRules, newRule).equals(rules.MATCHED) : true;
-
-
-        // Matched
-        System.out.println("2." + isStringRuleEvaluation(existingRules, newRule));
-        assert isStringRuleEvaluation(existingRules, newRule).equals(rules.MATCHED) : true;
-
-
-        //Unmatched
-        existingRules = new String[]{"CONTAINS 1,2,3,4"};
-        newRule = "CONTAINS 5,6";
-        System.out.println("3." + isStringRuleEvaluation(existingRules, newRule));
-        assert isStringRuleEvaluation(existingRules, newRule).equals(rules.NOT_MATCHED) : true;
-
-
-        //Matched
-        existingRules = new String[]{"CONTAINS 1,2,3,4"};
-        newRule = "CONTAINS 3,4,5,6";
-        System.out.println("4." + isStringRuleEvaluation(existingRules, newRule));
-        assert (isStringRuleEvaluation(existingRules, newRule).equals(rules.MATCHED));
-
-        // Unmatched
-        existingRules = new String[]{"NOT_CONTAINS 1,2,3,4"};
-        newRule = "CONTAINS 1,2,3,4";
-        System.out.println("5." + isStringRuleEvaluation(existingRules, newRule));
-        assert isStringRuleEvaluation(existingRules, newRule).equals(rules.NOT_MATCHED) : true;
-
-        // Matched
-        existingRules = new String[]{"CONTAINS 1,2,3,4"};
-        newRule = "NOT_CONTAINS 5,6";
-        System.out.println("6." + isStringRuleEvaluation(existingRules, newRule));
-        assert isStringRuleEvaluation(existingRules, newRule).equals(rules.MATCHED) : true;
-
-        // Matched
-        existingRules = new String[]{"NOT_CONTAINS 1,2,3,4"};
-        newRule = "NOT_CONTAINS 5,6";
-        System.out.println("7." + isStringRuleEvaluation(existingRules, newRule));
-        assert isStringRuleEvaluation(existingRules, newRule).equals(rules.MATCHED) : true;
-
-        // Matched
-        existingRules = new String[]{"NOT_CONTAINS 1,2,3,4"};
-        newRule = "NOT_CONTAINS 1,2,3,4";
-        System.out.println("8." + isStringRuleEvaluation(existingRules, newRule));
-        assert isStringRuleEvaluation(existingRules, newRule).equals(rules.MATCHED) : true;
-
-        // Matched
-        existingRules = new String[]{"NOT_CONTAINS 1,2,3,4"};
-        newRule = "NOT_CONTAINS 1,2,3";
-        System.out.println("9." + isStringRuleEvaluation(existingRules, newRule));
-        assert isStringRuleEvaluation(existingRules, newRule).equals(rules.MATCHED) : true;
-    }*/
+    
     private rules isStringRuleEvaluation(String[] existingRules, String newRule) throws Exception {
         if (null == existingRules) {
             // String we are supporting contains and Not Contains [Either equal or not equal]
